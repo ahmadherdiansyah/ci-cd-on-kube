@@ -38,7 +38,7 @@ jobs:
         run: |
          chmod +x ./scripts/build-image.sh
          ./scripts/build-image.sh react-app
-       shell: bash
+        shell: bash
       #
       # Publishes the Docker image to the container registry.
       #
@@ -46,10 +46,10 @@ jobs:
         run: |
          chmod +x ./scripts/push-image.sh
          ./scripts/push-image.sh react-app
-       shell: bash
-      # #
-      # # Installs Node.js (for figit).
-      # #
+        shell: bash
+        # #
+        # # Installs Node.js (for figit).
+        # #
       # - uses: actions/setup-node@v1
       #   with:
       #     node-version: 18
