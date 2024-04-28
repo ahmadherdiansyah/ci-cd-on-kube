@@ -10,7 +10,7 @@ func main() {
 	router := gin.Default()
 
 	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, "Hello From Go")
+		c.JSON(http.StatusOK, "Hello From Go!!")
 	})
 	// version 1
 	apiV1 := router.Group("/v1")
