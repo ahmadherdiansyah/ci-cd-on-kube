@@ -25,4 +25,4 @@ set -u # or set -o nounset
 : "$VERSION"
 
 export DIR=$1
-docker build -t ahmadherdiansyah:$DIR-$VERSION --file ./$DIR/Dockerfile ./$DIR
+docker build -t ahmadherdiansyah/cicd-test:$DIR-$VERSION --file ./$DIR/Dockerfile ./$DIR

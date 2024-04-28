@@ -30,4 +30,4 @@ set -u # or set -o nounset
 
 export DIR=$1
 echo $REGISTRY_PW | docker login --username $REGISTRY_UN --password-stdin
-docker push ahmadherdiansyah:$DIR-$VERSION
+docker push ahmadherdiansyah/cicd-test:$DIR-$VERSION
