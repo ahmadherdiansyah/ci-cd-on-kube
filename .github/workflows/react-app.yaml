@@ -47,31 +47,31 @@ jobs:
          chmod +x ./scripts/push-image.sh
          ./scripts/push-image.sh react-app
         shell: bash
-        # #
-        # # Installs Node.js (for figit).
-        # #
-      # - uses: actions/setup-node@v1
-      #   with:
-      #     node-version: 18
+        #
+        # Installs Node.js (for figit).
+        #
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
 
-      # #
-      # # Installs Figit.
-      # #
-      # - name: Install dependencies
-      #   run: npm install
+      #
+      # Installs Figit.
+      #
+      - name: Install dependencies
+        run: npm install
 
-      # #
-      # # Install Kubectl and connect to the cluster.
-      # #
-      # # https://github.com/marketplace/actions/kubernetes-cli-kubectl
-      # #
-      # - uses: tale/kubectl-action@v1
-      #   with:
-      #     base64-kube-config: ${{ secrets.KUBE_CONFIG }}
-      #     kubectl-version: v1.24.2
+      #
+      # Install Kubectl and connect to the cluster.
+      #
+      # https://github.com/marketplace/actions/kubernetes-cli-kubectl
+      #
+      - uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+          kubectl-version: v1.24.2
       
-      # #
-      # # Expands the configuration template and deploys the microservice.
-      # #
-      # - name: Deploy
-      #   run: npx figit ./scripts/kubernetes/gateway.yaml --output yaml | kubectl apply -f -
+      #
+      # Expands the configuration template and deploys the microservice.
+      #
+      - name: Deploy
+        run: npx figit ./scripts/kubernetes/react-app.yaml --output yaml | kubectl apply -f -
