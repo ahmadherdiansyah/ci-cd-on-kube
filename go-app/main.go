@@ -9,11 +9,11 @@ import (
 func main() {
 	router := gin.Default()
 
-	// version 1
-	apiV1 := router.Group("/v1")
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, "Hello From Go")
 	})
+	// version 1
+	apiV1 := router.Group("/v1")
 	apiV1.GET("users", func(c *gin.Context) {
 		c.JSON(http.StatusOK, "List Of V1 Users")
 	})
