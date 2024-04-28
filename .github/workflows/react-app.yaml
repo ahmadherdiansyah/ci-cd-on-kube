@@ -1,10 +1,10 @@
 # 
 # GitHub Actions workflow.
 #
-# Automatically deploys the "gateway" microservice on push.
+# Automatically deploys the "react-app" microservice on push.
 #
 
-name: Deploy Gateway
+name: Deploy react-app
 
 on:
   push:
