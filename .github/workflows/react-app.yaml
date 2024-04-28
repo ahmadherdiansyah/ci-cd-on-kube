@@ -68,4 +68,4 @@ jobs:
       # Expands the configuration template and deploys the microservice.
       #
       - name: Deploy
-        run: npx figit ./scripts/kubernetes/react-app.yaml --output yaml | kubectl apply -f -
+        run: npx figit ./scripts/k8s/react-app.yaml --output yaml | kubectl apply -f -
