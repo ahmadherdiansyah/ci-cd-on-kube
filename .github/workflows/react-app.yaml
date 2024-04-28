@@ -55,12 +55,6 @@ jobs:
           node-version: 18
 
       #
-      # Installs Figit.
-      #
-      - name: Install dependencies
-        run: npm install
-
-      #
       # Install Kubectl and connect to the cluster.
       #
       # https://github.com/marketplace/actions/kubernetes-cli-kubectl
