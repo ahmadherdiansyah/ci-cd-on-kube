@@ -1,17 +1,17 @@
 # 
 # GitHub Actions workflow.
 #
-# Automatically deploys the "gateway" microservice on push.
+# Automatically deploys the "go-app" microservice on push.
 #
 
-name: Deploy Gateway
+name: Deploy go-app
 
 on:
   push:
     branches: 
       - main
     paths:
-      - 'gateway/**'
+      - 'go-app/**'
   workflow_dispatch:
 
 jobs:
@@ -35,13 +35,17 @@ jobs:
       # Builds the Docker image.
       #
       - name: Build
-        run: ./scripts/build-image.sh gateway
+        run: |
+         chmod +x ./scripts/build-image.sh
+         ./scripts/build-image.sh go-app
 
       #
       # Publishes the Docker image to the container registry.
       #
       - name: Publish
-        run: ./scripts/push-image.sh gateway
+        run: |
+         chmod +x ./scripts/push-image.sh
+         ./scripts/push-image.sh go-app
 
       # #
       # # Installs Node.js (for figit).

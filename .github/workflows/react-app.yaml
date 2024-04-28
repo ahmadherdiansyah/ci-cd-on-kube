@@ -35,13 +35,16 @@ jobs:
       # Builds the Docker image.
       #
       - name: Build
-        run: ./scripts/build-image.sh gateway
-
+        run: |
+         chmod +x ./scripts/build-image.sh
+         ./scripts/build-image.sh react-app
       #
       # Publishes the Docker image to the container registry.
       #
       - name: Publish
-        run: ./scripts/push-image.sh gateway
+        run: |
+         chmod +x ./scripts/push-image.sh
+         ./scripts/push-image.sh react-app
 
       # #
       # # Installs Node.js (for figit).
